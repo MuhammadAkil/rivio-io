@@ -13,14 +13,11 @@ export default function VideoSection() {
                         
                     </h1>
 
-
-
-                        <p className="text-gray-400 mt-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod mauris ut enim mollis,
-                            a dictum magna pretium. Integer tincidunt, metus et ultricies faucibus, sem enim sollicitudin quam.
+                        <p className="text-white mt-4">
+                          Discover how Rivio’s smart IoT solutions simplify tracking, automate alerts, and optimize efficiency—all in real-time.
                         </p>
-                        <button className="mt-6 bg-gradient-to-r from-[#006A10] to-[#00D11F] text-white px-6 py-3 rounded-md">
-                            Watch Now
+                        <button className="mt-6 bg-gradient-to-r from-[#006A10] to-[#00D11F] text-white px-6 py-2 rounded-xl">
+                            Book a Demo
                         </button>
                     </div>
 
@@ -28,7 +25,6 @@ export default function VideoSection() {
                         <div className="relative w-full h-56 md:h-72 rounded-lg overflow-hidden">
                             <iframe
                                 className="absolute top-0 left-0 w-full h-full"
-                                // src="https://www.youtube.com/embed/VIDEO_ID"
                                 src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen

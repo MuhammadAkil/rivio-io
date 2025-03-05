@@ -9,8 +9,7 @@ import PricingPlan from "@/components/PricingPlan";
 import Accordion from "@/components/AccordianSection";
 import ContactUS from "@/components/ContactUS";
 import Footer from "@/components/Footer";
-
-
+import Testimonial from "@/components/Testimonial";
 export default function Home() {
   return (
     <>
@@ -21,11 +20,12 @@ export default function Home() {
       <VideoSection />
       <CardSection />
       <TrackSection />
-      <TankSection />
+        <TankSection />
+        <Testimonial />
       <PricingPlan />
       <Accordion />
       <ContactUS />
-      <Footer />
+        <Footer />
     </div>
     </>
 

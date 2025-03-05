@@ -13,11 +13,11 @@ export default function Accordion() {
     };
 
     const accordionData = [
-        { title: "Accordion Item 1", content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum laborum officia, quis assumenda cupiditate necessitatibus illum!' },
-        { title: "Accordion Item 2", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum laborum officia, quis assumenda cupiditate necessitatibus illum!." },
-        { title: "Accordion Item 3", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum laborum officia, quis assumenda cupiditate necessitatibus illum!." },
-        { title: "Accordion Item 4", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum laborum officia, quis assumenda cupiditate necessitatibus illum!." },
-        { title: "Accordion Item 5", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum laborum officia, quis assumenda cupiditate necessitatibus illum!." },
+        { title: "How does Rivio help businesses improve asset tracking?", content: 'Rivio leverages real-time IoT technology to automate tracking, optimize resource management, and reduce manual inspections. With instant alerts and remote monitoring, businesses stay informed and in control 24/7.' },
+        { title: "Is Rivio’s system easy to set up and use?", content: "Absolutely! It features a user-friendly interface with quick and hassle-free installation." },
+        { title: "Can Rivio help reduce operational costs?", content: "Yes, by improving efficiency, minimizing waste, and optimizing resource usage." },
+        { title: "How does Rivio’s level tracking system work?", content: "It uses smart sensors and real-time data to monitor and optimize inventory levels." },
+        { title: "What industries can benefit from Rivio’s tracking solutions?", content: " Rivio’s tracking solutions are ideal for industries like logistics, manufacturing, oil & gas, and agriculture." },
     ];
 
     return (
@@ -27,8 +27,8 @@ export default function Accordion() {
                 <h2 className="text-5xl sm:text-1xl text-white font-bold leading-[70.44px] tracking-normal text-center">
                     Frequently Asked <span className="text-[#00D11F]">Questions</span>
                 </h2>
-                <p className="text-gray-400 text-center mt-2 max-w-2xl mx-auto text-[16px] sm:text-[18px]">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, risus eget auctor laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <p className="text-[#F2F2F2] text-center mt-2 max-w-2xl mx-auto md:text-sm sm:text-[18px]">
+                  Find answers to common questions about Rivio’s smart tracking and monitoring solutions.
                 </p>
             </div>
 

@@ -1,5 +1,7 @@
 'use client';
 import React, { useState } from 'react';
+import { FaCheck } from "react-icons/fa"; 
+
 
 export default function PricingPlan() {
     const [activePlan, setActivePlan] = useState("Monthly");
@@ -9,30 +11,30 @@ export default function PricingPlan() {
             title: "Basic Plan",
             description: "Ideal for small businesses",
             price: "19",
-            features: ["Feature 1", "Feature 2", "Feature 3"],
+            features: ["1 device included (annually)", "Additional level sensors: $3 each", "GPS trackers: $5/month each", "Basic support", "Real-time data & alerting", "Dedicated integration help", "$2 activation fee per device (payable once)"],
         },
         {
             title: "Pro Plan",
             description: "For growing businesses",
             price: "49",
-            features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"],
+            features: ["5 devices included (annually)", "Additional level sensors: $3 each", "GPS trackers: $5/month each", "Priority support", "Real-time data & advanced analytics", "Dedicated integration help","$2 activation fee per device (payable once)"],
         },
         {
             title: "Enterprise",
             description: "For large scale businesses",
             price: "99",
-            features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4", "Feature 5"],
+            features: ["10 devices included (annually)", "Additional level sensors: $3 each", "GPS trackers: $5/month each", "24/7 support", "Real-time data & advanced analytics", "Dedicated integration help","$2 activation fee per device (payable once)"],
         },
     ];
 
     return (
-        <div className="bg-black py-16 px-6 sm:px-8">
+        <div className="bg-gradient-to-r from-black to-[#0A2A0A] py-16 px-6 sm:px-8">
             {/* Heading */}
             <h2 className="text-5xl sm:text-1xl text-white font-bold leading-[70.44px] tracking-normal text-center">
                 Rivio <span className="text-[#00D11F] ">Pricing Plan</span>
             </h2>
-            <p className="text-gray-400 text-center mt-2 max-w-lg mx-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <p className="text-[#EDEDED] text-sm text-center mt-2 max-w-lg mx-auto">
+               Choose a Rivio pricing plan that fits your business. Enjoy smart tracking, real-time alerts, and seamless automation at an affordable cost.
             </p>
 
             {/* Toggle Buttons (Grouped) */}
@@ -43,7 +45,7 @@ export default function PricingPlan() {
                         <button
                             key={plan}
                             onClick={() => setActivePlan(plan)}
-                            className={`px-6 py-2 text-lg text-white rounded-lg transition-all duration-300 ${activePlan === plan ? "bg-green-600" : "hover:bg-opacity-90"
+                            className={`px-6 py-2 text-lg text-white rounded-lg transition-all duration-300 ${activePlan === plan ? "bg-[#00D11F]" : "hover:bg-opacity-90"
                                 }`}
                         >
                             {plan}
@@ -59,21 +61,22 @@ export default function PricingPlan() {
                         className="p-6 rounded-xl transition-all duration-300 group w-full text-center hover:bg-[#0e2611] border border-transparent hover:border-[#01C41D]"
                     >
                         <h3 className="text-2xl font-semibold text-white">{plan.title}</h3>
-                        <p className="text-gray-300 mt-2">{plan.description}</p>
-                        <p className="text-green-400 text-3xl font-bold mt-4 relative inline-block">
+                        <p className="text-[#EDEDED] text-sm mt-2">{plan.description}</p>
+                        <p className="text-[#00D11F] text-3xl font-bold mt-4 relative inline-block">
                             ${plan.price}/mo
                         </p>
 
                         <div className="w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full my-4"></div>
 
-                        <ul className="mt-4 space-y-2 text-gray-300 text-left">
-                            {plan.features.map((feature, idx) => (
-                                <li key={idx} className="flex items-center space-x-2">
-                                    <span className="text-green-400">✔</span>
-                                    <span>{feature}</span>
-                                </li>
-                            ))}
-                        </ul>
+                       <ul className="mt-4 space-y-2 text-gray-300 text-left">
+    {plan.features.map((feature, idx) => (
+        <li key={idx} className="flex items-center space-x-2">
+            <FaCheck className="text-[#00D11F]" /> 
+            <span>{feature}</span>
+        </li>
+    ))}
+</ul>
+
 
                         <button className="mt-6 px-6 py-3 hover:bg-green-400 transition bg-gradient-to-r from-[#006A10] to-[#00D11F] text-white px-4 py-2 rounded-[12px]">
                             Get Started
