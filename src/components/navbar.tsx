@@ -43,10 +43,7 @@ export default function Navbar() {
           <button className="text-white hover:text-[#00D11F] px-2 py-1 text-sm xl:text-base">
             Pricing
           </button>
-          <Link href="/works" className="text-white hover:text-[#00D11F] px-2 py-1 text-sm xl:text-base">
-  How It Works
-</Link>
-            <Link href="/aboutus" className="text-white hover:text-[#00D11F] px-2 py-1 text-sm xl:text-base">
+         <Link href="/aboutus" className="text-white hover:text-[#00D11F] px-2 py-1 text-sm xl:text-base">
   About Us
 </Link>
           <button className="text-white hover:text-[#00D11F] px-2 py-1 text-sm xl:text-base">
