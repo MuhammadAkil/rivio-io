@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const testimonials = [
   {
@@ -32,11 +32,27 @@ const testimonials = [
 
 export default function TestimonialCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const carouselRef = useRef(null);
+  const extendedTestimonials = [...testimonials, ...testimonials]; // Duplicate array for seamless loop
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+      setCurrentIndex((prevIndex) => {
+        if (prevIndex >= testimonials.length - 1) {
+          // When reaching the end of original items
+          setTimeout(() => {
+            carouselRef.current.style.transition = 'none';
+            setCurrentIndex(0);
+            setTimeout(() => {
+              carouselRef.current.style.transition = 'transform 700ms ease-linear';
+            }, 50);
+          }, 700);
+          return prevIndex + 1;
+        }
+        return prevIndex + 1;
+      });
     }, 3000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -53,49 +69,50 @@ export default function TestimonialCarousel() {
 
       <div className="relative w-full overflow-hidden">
         <div
+          ref={carouselRef}
           className="flex transition-transform duration-700 ease-linear"
-          style={{ transform: `translateX(-${(currentIndex % testimonials.length) * 33.33}%)` }}
+          style={{ transform: `translateX(-${(currentIndex * 33.33)}%)` }}
         >
-          {testimonials.map((testimonial, index) => (
+          {extendedTestimonials.map((testimonial, index) => (
             <div key={index} className="w-1/3 flex-shrink-0 p-4">
               <div className="rounded-3xl border-2 border-[#00D11F] bg-[#0A1B0C] p-6 flex flex-col items-center">
-                   <div className="self-start mb-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-[#00D11F] rotate-180"
-          >
-            <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
-            <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
-          </svg>
-        </div>
+                <div className="self-start mb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-[#00D11F] rotate-180"
+                  >
+                    <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                    <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                  </svg>
+                </div>
 
-        <p className="text-white text-center mb-6">{testimonials[currentIndex].quote}</p>
+                <p className="text-white text-center mb-6">{testimonial.quote}</p>
 
-        <div className="self-end mb-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-[#00D11F]"
-          >
-            <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
-            <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
-          </svg>
-              </div>
+                <div className="self-end mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-[#00D11F]"
+                  >
+                    <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                    <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                  </svg>
+                </div>
                 <div className="mb-3 rounded-full border-2 border-white overflow-hidden h-20 w-20">
                   <Image src={testimonial.image} alt={testimonial.name} width={80} height={80} className="w-full h-full object-cover" />
                 </div>
@@ -112,7 +129,9 @@ export default function TestimonialCarousel() {
           <span
             key={index}
             className={`h-3 w-3 mx-1 rounded-full cursor-pointer transition-all ${
-              index === currentIndex ? "bg-[#00D11F]" : "bg-gray-500"
+              index === (currentIndex >= testimonials.length ? currentIndex - testimonials.length : currentIndex) 
+                ? "bg-[#00D11F]" 
+                : "bg-gray-500"
             }`}
             onClick={() => setCurrentIndex(index)}
           />
