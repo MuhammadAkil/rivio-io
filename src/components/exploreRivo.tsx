@@ -3,7 +3,14 @@ import Image from "next/image";
 
 export default function ExploreRivo() {
   return (
-    <div className="bg-gradient-to-l from-black to-[#0A2A0A] text-white px-4 py-26 flex flex-col items-center">
+    <div className="bg-black text-white px-4 py-26 flex flex-col items-center">
+                     <Image
+        src="/image/Ellipse 1442.png"
+        alt="Dashboard"
+        width={1000}
+        height={1200}
+        className="absolute  right-0  z-10"
+      />
       <div className="text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[70.44px] tracking-normal text-center">
           Explore <span className="text-[#00D11F]">Rivio</span>

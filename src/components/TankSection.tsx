@@ -24,7 +24,14 @@ export default function TankSection() {
   ];
 
   return (
-    <div className="bg-gradient-to-l from-black to-[#0A2A0A] py-5 px-4 min-h-screen">
+    <div className="bg-black py-5 px-4 min-h-screen">
+              <Image
+          src="/image/Ellipse 1441.png"
+          alt="feature"
+          width={1000}
+          height={1600}
+          className="absolute left-0  z-10"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-12 text-white">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-[#0a1b0c] bg-opacity-10 p-6 sm:p-8 rounded-2xl border-2 border-[#01C41D]">
           <div>

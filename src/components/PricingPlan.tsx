@@ -1,8 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { FaCheck } from "react-icons/fa"; 
-
-
+import Image from 'next/image';
 export default function PricingPlan() {
     const [activePlan, setActivePlan] = useState("Monthly");
 
@@ -28,8 +27,14 @@ export default function PricingPlan() {
     ];
 
     return (
-        <div className="bg-gradient-to-r from-black to-[#0A2A0A] py-16 px-6 sm:px-8">
-            {/* Heading */}
+        <div className="bg-black py-16 px-6 sm:px-8">
+                             <Image
+              src="/image/Ellipse 1442.png"
+              alt="Dashboard"
+              width={1000}
+              height={1200}
+              className="absolute right-0  z-10"
+            />
             <h2 className="text-5xl sm:text-1xl text-white font-bold leading-[70.44px] tracking-normal text-center">
                 Rivio <span className="text-[#00D11F] ">Pricing Plan</span>
             </h2>

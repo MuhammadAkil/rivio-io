@@ -5,16 +5,13 @@ import { ArrowRightIcon } from "@heroicons/react/24/solid";
 export default function CardSection() {
   return (
     <div className="bg-black text-white px-4 py-15 flex flex-col items-center relative">
-      {/* Centered Image */}
-      <div className="relative">
-         <Image
-    src="/image/Ellipse 1440.png"
-    alt="Dashboard"
-    width={500}
-    height={400}
-    className="absolute right-0 top-0 z-10"
-  />
-      </div>
+                 <Image
+  src="/image/Ellipse 1442.png"
+  alt="Dashboard"
+  width={800}
+  height={900}
+  className="absolute top-0 right-0  z-10"
+/>
 
       {/* Section Title */}
       <div className="text-center mt-8">

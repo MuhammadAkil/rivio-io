@@ -10,8 +10,8 @@ export default function FeatureSection() {
         <Image
     src="/image/Ellipse 1441.png"
     alt="feature"
-    width={500}
-    height={400}
+    width={800}
+    height={600}
     className="absolute left-0  z-10"
 />
 

@@ -3,7 +3,14 @@ import Image from "next/image";
 
 export default function UseCaseHero() {
   return (
-    <div className="bg-gradient-to-r from-black to-[#0A2A0A] min-h-screen text-white py-16 px-4 flex items-center">
+    <div className="bg-black min-h-screen text-white py-16 px-4 flex items-center">
+                     <Image
+  src="/image/Ellipse 1440.png"
+  alt="Dashboard"
+  width={900}
+  height={700}
+  className="absolute top-2/4 right-0 -translate-y-1/2 z-10"
+/>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-36 items-center">
         {/* Left Content */}
         <div className="flex flex-col items-center md:items-start md:max-w-md">

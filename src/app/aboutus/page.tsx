@@ -1,13 +1,11 @@
 import Navbar from "@/components/navbar";
+import AboutUs from "@/components/AboutusHero";
 import Footer from "@/components/Footer";
-import WorksHero from "@/components/WorksHero";
-import Flow from "@/components/Flow";
 export default function UseCasesPage() {
   return (
     <div>
       <Navbar />
-       <WorksHero />
-          <Flow />
+   <AboutUs />
       <Footer />
     </div>
   );
