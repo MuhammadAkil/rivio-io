@@ -36,6 +36,9 @@ export default function Navbar() {
 </Link>
 <Link href="/usecases" className="text-white hover:text-[#00D11F] px-2 py-1 text-sm xl:text-base">
   Use Cases
+          </Link>
+          <Link href="/works" className="text-white hover:text-[#00D11F] px-2 py-1 text-sm xl:text-base">
+  How It Works
 </Link>
           <button className="text-white hover:text-[#00D11F] px-2 py-1 text-sm xl:text-base">
             Pricing
@@ -72,6 +75,9 @@ export default function Navbar() {
 </Link>
 <Link href="/usecases" className="hover:text-[#00D11F] px-4 py-2 text-left text-base">
   Use Cases
+            </Link>
+                      <Link href="/works" className="text-white hover:text-[#00D11F] px-2 py-1 text-sm xl:text-base">
+  How It Works
 </Link>
             <button className="hover:text-[#00D11F] px-4 py-2 text-left text-base">
               Pricing

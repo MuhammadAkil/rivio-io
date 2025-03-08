@@ -12,7 +12,7 @@ export default function WhyRivio() {
               Why Rivio is Perfect For
             </span>
             <span className="text-[#00D11F] font-bold block sm:inline">
-              Golf Course Owners
+                Golf Course Owners
             </span>
           </h1>
 
