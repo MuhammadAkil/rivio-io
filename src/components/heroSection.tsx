@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function HeroSection() {
     return (
         <div className="relative bg-black min-h-screen w-full">
-            <div className="absolute inset-0 bg-[url('/image/hero.png')] bg-cover bg-no-repeat"></div>
+            <div className="absolute inset-0 z-10 -top-14 bg-[url('/image/hero.png')] bg-cover bg-no-repeat"></div>
             <div className="relative grid min-h-screen bg-black mt-12">
                <Image
   src="/image/Ellipse 1440.png"

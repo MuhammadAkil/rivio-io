@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import { FaEllipsisH, FaPlus } from 'react-icons/fa';
 
 export default function Accordion() {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -45,8 +46,8 @@ export default function Accordion() {
                             onClick={() => toggleAccordion(index)}
                         >
                             <h2 className="text-2xl text-[#00D11F] font-semibold">{item.title}</h2>
-                            <i className={`fa ${activeIndex === index ? "fa-ellipsis-h" : "fa-plus"}`} style={{ color: '#01C41D', fontSize: '20px' }}></i>
-                        </div>
+                            {activeIndex === index ? <FaEllipsisH className="text-[#01C41D] text-xl" /> : <FaPlus className="text-[#01C41D] text-xl" />}
+                            </div>
                         {activeIndex === index && (
                             <div className="p-4 text-gray-300">
                                 <p className="text-[20px] leading-[23.48px] tracking-[0%] font-normal">{item.content}</p>

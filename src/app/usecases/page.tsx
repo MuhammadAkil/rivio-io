@@ -1,3 +1,4 @@
+"use client";
 import Navbar from "@/components/navbar";
 import UseCaseHero from "@/components/UseCasesHero";
 import Explore from "@/components/ExploreUsecase";

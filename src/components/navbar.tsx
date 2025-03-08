@@ -19,7 +19,7 @@ export default function Navbar() {
         <div className="flex items-center">
           <div className="text-[#00D11F] text-xl sm:text-2xl font-bold flex items-center gap-2">
             <Image
-              src="/image/Screenshot 2025-03-05 231449.png"
+              src="/image/green-logo.png"
               alt="Logo"
               width={120}
               height={120}
