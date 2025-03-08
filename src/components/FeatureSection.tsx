@@ -6,7 +6,15 @@ import Image from "next/image";
 export default function FeatureSection() {
   return (
     <>
-      <div className="bg-gradient-to-l from-black to-[#0A2A0A] text-white py-12 sm:py-16 px-4">
+      <div className="bg-black text-white py-12 sm:py-16 px-4">
+        <Image
+    src="/image/Ellipse 1441.png"
+    alt="feature"
+    width={800}
+    height={600}
+    className="absolute left-0  z-10"
+/>
+
         <div className="max-w-7xl mx-auto bg-[#0A1B0D] bg-opacity-80 border border-[#284D2D] rounded-lg p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row justify-center items-center text-center gap-3 sm:gap-4 md:gap-6">
           <div className="flex-1 flex flex-col items-center p-3 sm:p-4 bg-[#0A1B0D] bg-opacity-80 rounded-lg shadow-md">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00D11F] mb-1 sm:mb-2">

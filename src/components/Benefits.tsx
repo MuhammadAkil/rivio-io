@@ -15,7 +15,14 @@ export default function Benefits() {
   ];
 
   return (
-    <div className="bg-gradient-to-l from-black to-[#0A2A0A] py-10 px-4 min-h-screen">
+    <div className="bg-black py-10 px-4 min-h-screen">
+               <Image
+                src="/image/Ellipse 1441.png"
+                alt="feature"
+                width={1000}
+                height={1600}
+                className="absolute left-0  z-10"
+            />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 text-white">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-[#0a1b0c] bg-opacity-10 p-6 sm:p-10 rounded-2xl border-2 border-[#01C41D] bg-cover bg-center"

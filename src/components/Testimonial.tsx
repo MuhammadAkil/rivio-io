@@ -34,7 +34,7 @@ export default function Testimonial() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-l from-black to-[#0A2A0A] p-6 sm:p-8">
+    <div className="bg-black p-6 sm:p-8">
       <div className="my-7">
         <h2 className="text-5xl sm:text-1xl text-white font-bold leading-[70.44px] tracking-normal text-center">
           What Our <span className="text-[#00D11F]">Clients Say</span>

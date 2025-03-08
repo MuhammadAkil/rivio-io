@@ -3,7 +3,8 @@ import Image from "next/image";
 
 export default function WhyRivio() {
   return (
-    <div className="bg-gradient-to-r from-black to-[#0A2A0A] min-h-screen text-white py-16 px-4 flex flex-col items-center">
+    <div className="bg-black min-h-screen text-white py-16 px-4 flex flex-col items-center">
+          
       {/* Main Content */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-36 items-center mb-10">
         <div className="flex flex-col items-center md:items-start md:max-w-md">
@@ -12,7 +13,7 @@ export default function WhyRivio() {
               Why Rivio is Perfect For
             </span>
             <span className="text-[#00D11F] font-bold block sm:inline">
-              Golf Course Owners
+                Golf Course Owners
             </span>
           </h1>
 
