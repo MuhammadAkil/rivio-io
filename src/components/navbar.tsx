@@ -7,7 +7,14 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 z-50 w-full bg-gradient-to-r from-black to-[#0A2A0A] shadow-md">
+    <nav className="fixed top-0 z-50 w-full bg-black shadow-md">
+       {/* <Image
+                          src="/image/Ellipse 1440.png"
+                          alt="Dashboard"
+                          width={500}
+                          height={500}
+                          className="absolute top-0 right-0 z-10"
+                      /> */}
       <div className="container mx-auto flex items-center justify-between px-4 py-3 sm:py-4">
         <div className="flex items-center">
           <div className="text-[#00D11F] text-xl sm:text-2xl font-bold flex items-center gap-2">

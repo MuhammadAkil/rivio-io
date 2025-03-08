@@ -11,30 +11,19 @@ export default function Explore() {
       </div>
 
       <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-6 mt-8 sm:mt-10 md:mt-12">
-        {[
-          { src: "/image/plumbing.png", label: "Septic & Water Monitoring" },
-          { src: "/image/local_shipping.png", label: "Salt Delivery" },
-          { src: "/image/golf_course.png", label: "Golf Course" },
-        ].map((item, index) => (
+        {useCases1.map((item, index) => (
           <GridItem key={index} {...item} />
         ))}
       </div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6 mt-8">
-        {[
-          { src: "/image/camping.png", label: "Marinas" },
-          { src: "/image/directions_boat.png", label: "Municipalities" },
-          { src: "/image/wc.png", label: "Public Restrooms" },
-          { src: "/image/camping.png", label: "Campground Management" },
-        ].map((item, index) => (
+        {useCases2.map((item, index) => (
           <GridItem key={index} {...item} />
         ))}
       </div>
+      
       <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 mt-8">
-        {[
-          { src: "/image/agriculture.png", label: "Farm Operations" },
-          { src: "/image/ac_unit.png", label: "Anti-Icing & Deicing Solutions" },
-        ].map((item, index) => (
+        {useCases3.map((item, index) => (
           <GridItem key={index} {...item} />
         ))}
       </div>
@@ -42,15 +31,43 @@ export default function Explore() {
   );
 }
 
-const GridItem = ({ src, label }) => (
+// Define TypeScript interface for props
+interface GridItemProps {
+  src: string;
+  label: string;
+}
+
+// Ensure GridItem has explicit types
+const GridItem: React.FC<GridItemProps> = ({ src, label }) => (
   <div className="group flex justify-center items-center gap-4 p-4 bg-[#0A1B0C] border border-[#284D2D] hover:bg-[#00D11F] shadow-lg rounded-lg transition-all duration-300 ease-in-out">
     <Image
       src={src}
       alt={label}
       width={40}
       height={40}
-      className="w-10 h-10 transition-all duration-300 group-hover:filter group-hover:invert  group-hover:brightness-0 "
+      className="w-10 h-10 transition-all duration-300 group-hover:filter group-hover:invert group-hover:brightness-0"
     />
     <h3 className="text-sm sm:text-sm font-semibold text-white">{label}</h3>
   </div>
 );
+
+// Use case data arrays
+const useCases1: GridItemProps[] = [
+  { src: "/image/plumbing.png", label: "Septic & Water Monitoring" },
+  { src: "/image/local_shipping.png", label: "Salt Delivery" },
+  { src: "/image/golf_course.png", label: "Golf Course" },
+];
+
+const useCases2: GridItemProps[] = [
+  { src: "/image/camping.png", label: "Marinas" },
+  { src: "/image/directions_boat.png", label: "Municipalities" },
+  { src: "/image/wc.png", label: "Public Restrooms" },
+  { src: "/image/camping.png", label: "Campground Management" },
+];
+
+const useCases3: GridItemProps[] = [
+  { src: "/image/agriculture.png", label: "Farm Operations" },
+  { src: "/image/ac_unit.png", label: "Anti-Icing & Deicing Solutions" },
+];
+
+export { GridItem };
