@@ -7,7 +7,6 @@ import CardSection from "@/components/CardSection";
 import TrackSection from "@/components/TrackSection";
 import TankSection from "@/components/TankSection";
 import Accordion from "@/components/AccordianSection";
-import ContactUS from "@/components/ContactUS";
 import Footer from "@/components/Footer";
 import Testimonial from "@/components/Testimonial";
 export default function Home() {
@@ -23,7 +22,6 @@ export default function Home() {
         <TankSection />
         <Testimonial />
       <Accordion />
-      <ContactUS />
         <Footer />
     </div>
     </>

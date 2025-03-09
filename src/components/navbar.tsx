@@ -39,9 +39,9 @@ export default function Navbar() {
          <Link href="/aboutus" className="text-white hover:text-[#00D11F] px-2 py-1 text-sm xl:text-base">
   About Us
 </Link>
-          <button className="text-white hover:text-[#00D11F] px-2 py-1 text-sm xl:text-base">
-            Contact Us
-          </button>
+         <Link href="/contactus" className="text-white hover:text-[#00D11F] px-2 py-1 text-sm xl:text-base">
+  Contact Us
+</Link>
           <button className="bg-white text-black px-4 py-2 sm:px-6 sm:py-2 rounded-xl font-medium text-sm xl:text-base">
             Sign Up
           </button>
@@ -81,9 +81,9 @@ export default function Navbar() {
            <Link href="/aboutus" className="text-white hover:text-[#00D11F] px-2 py-1 text-sm xl:text-base">
   About Us
 </Link>
-            <button className="hover:text-[#00D11F] px-4 py-2 text-left text-base">
-              Contact Us
-            </button>
+            <Link href="/contactus" className="text-white hover:text-[#00D11F] px-2 py-1 text-sm xl:text-base">
+  Contact Us
+</Link>
             <button className="bg-white text-black px-6 py-3 rounded-md font-medium text-base">
               Sign Up
             </button>

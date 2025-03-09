@@ -7,7 +7,14 @@ import Image from 'next/image';
 
 export default function ContactUs() {
   return (
-    <div className="bg-black p-6 sm:p-8 !pb-32">
+    <div className="bg-black px-6 sm:px-8 !pb-32 pt-30">
+                     <Image
+        src="/image/Ellipse 1440.png"
+        alt="Dashboard"
+        width={900}
+        height={700}
+        className="absolute top-2/4 right-0 -translate-y-1/2 z-10"
+      />
         <div className="my-7">
         <h2 className="text-5xl sm:text-1xl text-white font-bold leading-[70.44px] tracking-normal text-center">
           Get Your Pipeline Rich With <span className="block text-[#00D11F]">Qualified Deals</span>
@@ -95,13 +102,6 @@ export default function ContactUs() {
             </button>
           </form>
         </div>
-         <Image
-                        src="/image/Ellipse 1442.png"
-                        alt="Dashboard"
-                        width={800}
-                        height={500}
-                        className="absolute right-0 z-20  "
-                    />
       </div>
     </div>
   );
