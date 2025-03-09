@@ -21,7 +21,7 @@ export default function Accordion() {
         <div className="bg-black p-6 sm:p-8">
             {/* Heading */}
             <div className="px-4 sm:px-8">
-                <h2 className="text-5xl sm:text-xl text-white font-bold leading-[70.44px] tracking-normal text-center">
+                <h2 className="text-5xl sm:text-1xl text-white font-bold leading-[70.44px] tracking-normal text-center">
                     Frequently Asked <span className="text-[#00D11F]">Questions</span>
                 </h2>
                 <p className="text-[#F2F2F2] text-center mt-2 max-w-2xl mx-auto md:text-sm sm:text-[18px]">
