@@ -35,26 +35,31 @@ export default function TestimonialCarousel() {
   const carouselRef = useRef(null);
   const extendedTestimonials = [...testimonials, ...testimonials]; // Duplicate array for seamless loop
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
-        if (prevIndex >= testimonials.length - 1) {
-          // When reaching the end of original items
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentIndex((prevIndex) => {
+      if (prevIndex >= testimonials.length - 1) {
+        // When reaching the end of original items
+        setTimeout(() => {
+          if (carouselRef.current) {
+            carouselRef.current.style.transition = "none"; // ✅ Null check added
+          }
+          setCurrentIndex(0);
           setTimeout(() => {
-            carouselRef.current.style.transition = 'none';
-            setCurrentIndex(0);
-            setTimeout(() => {
-              carouselRef.current.style.transition = 'transform 700ms ease-linear';
-            }, 50);
-          }, 700);
-          return prevIndex + 1;
-        }
+            if (carouselRef.current) {
+              carouselRef.current.style.transition = "transform 700ms ease-linear"; // ✅ Null check added
+            }
+          }, 50);
+        }, 700);
         return prevIndex + 1;
-      });
-    }, 3000);
+      }
+      return prevIndex + 1;
+    });
+  }, 3000);
 
-    return () => clearInterval(interval);
-  }, []);
+  return () => clearInterval(interval);
+}, []);
+
 
   return (
     <div className="bg-black p-6 sm:p-8 overflow-hidden relative">
