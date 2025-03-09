@@ -1,66 +1,66 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
+import EmblaCarousel from "embla-carousel-react";
 
 const testimonials = [
   {
     quote: "Thanks to Rivio, our septic tank monitoring is now fully automated. No more manual checks or surprises—just accurate, reliable data.",
     name: "Robert Smith",
     role: "Head of Operations, LogisticFlow",
-    image: "/image/Ellipse 1426.png"
+    image: "/image/Ellipse 1426.png",
   },
   {
     quote: "Thanks to Rivio, our septic tank monitoring is now fully automated. No more manual checks, reliable data whenever we need it!",
     name: "Sarah Mitchell",
     role: "Facility Manager, Eco Waste Solutions",
-    image: "/image/download.jpg"
+    image: "/image/download.jpg",
   },
   {
     quote: "Rivio has revolutionized the way we manage our operations. It's accurate, efficient, and saves us time!",
     name: "James Carter",
     role: "Operations Manager, GreenTech",
-    image: "/image/images.jpg"
+    image: "/image/images.jpg",
   },
   {
     quote: "This platform has made our workflow so much smoother. It's accurate, efficient, and saves us time. Highly recommended for businesses!",
     name: "Emily Dawson",
     role: "CEO, Smart Logistics",
-    image: "/image/images (1).jpg"
+    image: "/image/images (1).jpg",
   },
-  
 ];
 
 export default function TestimonialCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const carouselRef = useRef(null);
-  const extendedTestimonials = [...testimonials, ...testimonials]; // Duplicate array for seamless loop
+  const [emblaRef, emblaApi] = EmblaCarousel({
+    loop: true,
+    slidesToScroll: 1,
+    duration: 30,
+  });
+  const autoplayRef = useRef();
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrentIndex((prevIndex) => {
-      if (prevIndex >= testimonials.length - 1) {
-        // When reaching the end of original items
-        setTimeout(() => {
-          if (carouselRef.current) {
-            carouselRef.current.style.transition = "none"; // ✅ Null check added
-          }
-          setCurrentIndex(0);
-          setTimeout(() => {
-            if (carouselRef.current) {
-              carouselRef.current.style.transition = "transform 700ms ease-linear"; // ✅ Null check added
-            }
-          }, 50);
-        }, 700);
-        return prevIndex + 1;
+  const autoplay = useCallback(() => {
+    if (!emblaApi) return;
+    emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    autoplayRef.current = setInterval(() => {
+      autoplay();
+    }, 3000);
+
+    return () => {
+      if (autoplayRef.current) {
+        clearInterval(autoplayRef.current);
       }
-      return prevIndex + 1;
-    });
-  }, 3000);
-
-  return () => clearInterval(interval);
-}, []);
-
-
+    };
+  }, [emblaApi, autoplay]);
+  const getActiveDotIndex = () => {
+    if (!emblaApi) return 0;
+    const currentIndex = emblaApi.selectedScrollSnap();
+    return currentIndex % testimonials.length;
+  };
   return (
     <div className="bg-black p-6 sm:p-8 overflow-hidden relative">
       <div className="my-7">
@@ -72,15 +72,11 @@ useEffect(() => {
         </p>
       </div>
 
-      <div className="relative w-full overflow-hidden">
-        <div
-          ref={carouselRef}
-          className="flex transition-transform duration-700 ease-linear"
-          style={{ transform: `translateX(-${(currentIndex * 33.33)}%)` }}
-        >
-          {extendedTestimonials.map((testimonial, index) => (
-            <div key={index} className="w-1/3 flex-shrink-0 p-4">
-              <div className="rounded-3xl border-2 border-[#00D11F] bg-[#0A1B0C] p-6 flex flex-col items-center">
+      <div ref={emblaRef} className="relative w-full embla">
+        <div className="flex embla__container">
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="flex-[0_0_33.33%] min-w-0 p-4">
+              <div className="rounded-3xl border-2 border-[#00D11F] bg-[#0A1B0C] p-6 flex flex-col items-center h-full">
                 <div className="self-start mb-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -98,9 +94,7 @@ useEffect(() => {
                     <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
                   </svg>
                 </div>
-
                 <p className="text-white text-center mb-6">{testimonial.quote}</p>
-
                 <div className="self-end mb-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -127,20 +121,6 @@ useEffect(() => {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="flex justify-center mt-4">
-        {testimonials.map((_, index) => (
-          <span
-            key={index}
-            className={`h-3 w-3 mx-1 rounded-full cursor-pointer transition-all ${
-              index === (currentIndex >= testimonials.length ? currentIndex - testimonials.length : currentIndex) 
-                ? "bg-[#00D11F]" 
-                : "bg-gray-500"
-            }`}
-            onClick={() => setCurrentIndex(index)}
-          />
-        ))}
       </div>
     </div>
   );
