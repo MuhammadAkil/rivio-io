@@ -14,15 +14,15 @@ export default function PricingHero() {
 
         <div className="container relative z-10 my-auto mx-auto grid place-items-center text-center">
                     <h1 className="text-center text-white text-3xl sm:text-4xl md:text-5xl lg:max-w-3xl">
-                        <span className="font-bold text-white block sm:inline">Smart Solution For </span>
-                        <span className="text-[#00D11F] font-bold block sm:inline"> Effortless</span>
-                        <br />
-                        <span className=" text-white block sm:inline">Resource Management!</span>
+                        <span className="font-bold text-white block sm:inline">Trusted by Thousands of</span>
+                        <span className="text-[#00D11F] font-bold block sm:inline"> Businesses
+and Homeowners Worldwide</span>
+                        
         </h1>
-        <p className="text-white mt-2 text-center max-w-2xl mt-10 mb-6">Rivio empowers businesses and homeowners with cutting-edge IoT technology, providing real-time insights, automation, and seamless efficiency.</p>
+        <p className="text-white mt-2 text-center max-w-2xl mt-10 mb-6">From large property management companies to small business owners, Rivio’s innovative solutions help clients simplify and automate their resource management.</p>
                     <div className="flex items-center my-5 justify-center">
                         <button className="bg-gradient-to-r from-[#006A10] to-[#00D11F] text-white px-6 py-1.5 rounded-md text-sm sm:text-base flex items-center gap-2">
-                           Explore Solutions
+                           Get Started Today
                         </button>
                     </div>
                 </div>
