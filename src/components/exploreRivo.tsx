@@ -12,6 +12,25 @@ export default function ExploreRivo() {
         height={1200}
         className="absolute  right-0  z-10"
       />
+        <div className="max-w-4xl mx-auto rounded-3xl border-2 border-[#00D11F] bg-[#0A1B0C] p-6 flex flex-col transition-all duration-500 mb-30 text-white">
+  {/* Star Rating */}
+  <div className="flex space-x-1">
+    <span className="text-white text-4xl">★</span>
+    <span className="text-white text-4xl">★</span>
+    <span className="text-white text-4xl">★</span>
+    <span className="text-white text-4xl">★</span>
+    <span className="text-white text-4xl">★</span>
+  </div>
+
+  {/* Reviewer Name */}
+  <p className="text-[#00D11F] text-xl font-bold mt-2">— James Caldwell</p>
+  <p className="text-sm text-[#FFFFFF]">Owner, GreenHorizon Golf Club</p>
+
+  {/* Review Content */}
+  <p className="text-sm text-[#FFFFFF] mt-3">
+    "Rivio has revolutionized how we manage our golf course’s water systems. With real-time tracking and instant alerts, we no longer worry about irrigation failures or unexpected water shortages. It’s a game-changer that keeps our course in top condition while saving time and money!"
+  </p>
+</div>
       <div className="text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[70.44px] tracking-normal text-center">
           Explore <span className="text-[#00D11F]">Rivio</span>
