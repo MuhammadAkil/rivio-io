@@ -21,9 +21,10 @@ export default function ExploreRivo() {
   <p className="text-sm text-[#FFFFFF]">Owner, GreenHorizon Golf Club</p>
 
   {/* Review Content */}
-  <p className="text-sm text-[#FFFFFF] mt-3">
-    "Rivio has revolutionized how we manage our golf course’s water systems. With real-time tracking and instant alerts, we no longer worry about irrigation failures or unexpected water shortages. It’s a game-changer that keeps our course in top condition while saving time and money!"
-  </p>
+ <p className="text-sm text-[#FFFFFF] mt-3">
+  "Rivio has revolutionized how we manage our golf course&rsquo;s water systems. With real-time tracking and instant alerts, we no longer worry about irrigation failures or unexpected water shortages. It&rsquo;s a game-changer that keeps our course in top condition while saving time and money!"
+</p>
+
 </div>
       <div className="text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[70.44px] tracking-normal text-center">
@@ -31,7 +32,7 @@ export default function ExploreRivo() {
         </h2>
       </div>
       <Image
-        src="/image/Screenshot 2025-03-02 at 12.50.11 PM 1.png"
+        src="/image/explor-rivio.png"
         width={1200} 
         height={1000} 
         alt="Graph"
@@ -106,8 +107,9 @@ export default function ExploreRivo() {
         />
       </div>
       <p className="text-[#FFFFFF] text-center text-sm leading-relaxed px-4">
-        Whether it’s a septic tank, brine tank, sump pit, or fuel container-Rivio keeps you informed.
-      </p>
+  Whether it&rsquo;s a septic tank, brine tank, sump pit, or fuel container—Rivio keeps you informed.
+</p>
+
     </div>
   </div>
 </div>

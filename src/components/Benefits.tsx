@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { FaCheck } from "react-icons/fa";

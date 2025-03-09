@@ -53,7 +53,7 @@ export default function WorksHero() {
   <div className="flex flex-col items-center">
     <div className="relative w-[350px] sm:w-[400px] md:w-[450px] lg:w-[500px] rounded-lg p-2">
       <Image
-        src="/image/Screenshot 2025-03-08 at 12.46.25 AM 1.png" 
+        src="/image/dashboard-map.png" 
         alt="Dashboard"
         width={500}
         height={600}

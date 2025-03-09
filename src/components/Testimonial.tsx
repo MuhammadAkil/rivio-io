@@ -36,7 +36,7 @@ export default function TestimonialCarousel() {
     slidesToScroll: 1,
     duration: 30,
   });
-  const autoplayRef = useRef();
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const autoplay = useCallback(() => {
     if (!emblaApi) return;
@@ -51,16 +51,11 @@ export default function TestimonialCarousel() {
     }, 3000);
 
     return () => {
-      if (autoplayRef.current) {
+      if (autoplayRef.current !== null) {
         clearInterval(autoplayRef.current);
       }
     };
   }, [emblaApi, autoplay]);
-  const getActiveDotIndex = () => {
-    if (!emblaApi) return 0;
-    const currentIndex = emblaApi.selectedScrollSnap();
-    return currentIndex % testimonials.length;
-  };
   return (
     <div className="bg-black p-6 sm:p-8 overflow-hidden relative">
       <div className="my-7">
