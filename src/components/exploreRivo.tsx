@@ -5,13 +5,7 @@ import Image from "next/image";
 export default function ExploreRivo() {
   return (
     <div className="bg-black text-white px-4 py-26 flex flex-col items-center">
-                     <Image
-        src="/image/Ellipse 1442.png"
-        alt="Dashboard"
-        width={1000}
-        height={1200}
-        className="absolute  right-0  z-10"
-      />
+     
         <div className="max-w-4xl mx-auto rounded-3xl border-2 border-[#00D11F] bg-[#0A1B0C] p-6 flex flex-col transition-all duration-500 mb-30 text-white">
   {/* Star Rating */}
   <div className="flex space-x-1">
@@ -133,7 +127,13 @@ export default function ExploreRivo() {
     Book a Free Demo
   </button>
 </div>
-
+                <Image
+        src="/image/Ellipse 1442.png"
+        alt="Dashboard"
+        width={1000}
+        height={1200}
+        className="absolute  right-0  z-10"
+      />
 
 
     </div>

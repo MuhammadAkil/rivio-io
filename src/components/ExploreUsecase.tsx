@@ -33,50 +33,44 @@ const useCaseData = {
       "Marinas can now optimize operations by monitoring dock occupancy, water tanks, and other critical infrastructure in real time.",
     image: "/image/marina.jpg",
   },
-   "Municipalities": {
+  "Municipalities": {
     title: "Why Rivio is Perfect For Municipalities",
     description:
       "Public works can now optimize operations by monitoring municipal trash bins, deicing tanks, and other critical infrastructure in real time. Leveraging GPS technology, our solution is easy to install and can adapt to any tank or waste container requiring monitoring.",
     image: "/image/muncipal.jpg",
   },
-    "Public Restrooms": {
+  "Public Restrooms": {
     title: "Why Rivio is Perfect For Public Restrooms",
     description:
       "With Rivio’s real-time monitoring and predictive analytics, you’ll know when it’s time to service your portable restrooms—before it becomes an emergency. Because no one likes a nasty surprise.",
     image: "/image/restroom.webp",
   },
-     "Campground Management": {
+  "Campground Management": {
     title: "Why Rivio is Perfect For Campground Management",
     description:
       "It includes managing reservations, ensuring clean and well-maintained facilities, monitoring water and waste levels, and enhancing security. Smart solutions, such as real-time monitoring and automated alerts, help improve efficiency, reduce maintenance costs.",
     image: "/image/camp.jpg",
   },
-      "Farm Operations": {
+  "Farm Operations": {
     title: "Why Rivio is Perfect For Farm Operations",
     description:
       "Our level sensors help you optimize farm operations by monitoring water usage and critical infrastructure in real time. With Rivio’s smart sensors and predictive analytics, you can ensure smooth and efficient resource management.",
     image: "/image/farm.jpg",
   },
-       "Anti-Icing & Deicing Solutions": {
+  "Anti-Icing & Deicing Solutions": {
     title: "Why Rivio is Perfect For Anti-Icing & Deicing Solutions",
     description:
       "Most deicer companies operate in a reactive mode, waiting for customers to call when their tanks are empty. With Rivio’s real-time monitoring and predictive analytics, you can eliminate the guesswork and transition to a fully proactive service model. Our solutions work for both end-user customers and distribution or manufacturing partners who want to integrate with their customers to track levels.",
     image: "/image/icong.webp",
-  }
+  },
 };
 
 export default function Explore() {
   const [selected, setSelected] = useState("Golf Course");
+  console.log(`Current selected: ${selected}`);
 
   return (
     <div className="bg-black text-white px-4 py-26 relative">
-      <Image
-        src="/image/Ellipse 1441.png"
-        alt="feature"
-        width={1000}
-        height={1600}
-        className="absolute left-0 z-10"
-      />
       <div className="text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[70.44px] tracking-normal text-center">
           Explore <span className="text-[#00D11F]">Use Cases</span>
@@ -86,7 +80,7 @@ export default function Explore() {
       <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-6 mt-8">
         {useCases1.map((item, index) => (
           <GridItem
-            key={index}
+            key={`useCases1-${index}`} 
             src={item.src}
             label={item.label}
             selected={selected}
@@ -98,7 +92,7 @@ export default function Explore() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6 mt-8">
         {useCases2.map((item, index) => (
           <GridItem
-            key={index}
+            key={`useCases2-${index}`} 
             src={item.src}
             label={item.label}
             selected={selected}
@@ -110,7 +104,7 @@ export default function Explore() {
       <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 mt-8">
         {useCases3.map((item, index) => (
           <GridItem
-            key={index}
+            key={`useCases3-${index}`} 
             src={item.src}
             label={item.label}
             selected={selected}
@@ -119,7 +113,6 @@ export default function Explore() {
         ))}
       </div>
 
-      {/* Dynamic Data Section */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-36 items-center mt-30">
         <div className="flex flex-col items-center md:items-start md:max-w-md">
           <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:max-w-3xl">
@@ -160,6 +153,13 @@ export default function Explore() {
           </button>
         </div>
       </div>
+        <Image
+        src="/image/Ellipse 1441.png"
+        alt="feature"
+        width={1000}
+        height={1600}
+        className="absolute left-0 z-10"
+      />
     </div>
   );
 }
@@ -181,14 +181,19 @@ const GridItem: React.FC<GridItemProps> = ({
     className={`group flex justify-center items-center gap-4 p-4 border border-[#284D2D] shadow-lg rounded-lg transition-all duration-300 ease-in-out ${
       selected === label ? "bg-[#00D11F]" : "bg-[#0A1B0C] hover:bg-[#00D11F]"
     }`}
-    onClick={() => setSelected(label)}
+    onClick={() => {
+      console.log(`Clicked: ${label}`); 
+      setSelected(label);
+    }}
   >
     <Image
       src={src}
       alt={label}
       width={40}
       height={40}
-      className="w-10 h-10 transition-opacity duration-300 group-hover:opacity-75"
+      className={`w-10 h-10 transition-opacity duration-300 group-hover:opacity-75 ${
+        selected === label ? "filter brightness-0 invert" : ""
+      }`}
     />
     <h3 className="text-sm sm:text-sm font-semibold text-white">{label}</h3>
   </div>
