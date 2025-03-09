@@ -21,7 +21,7 @@ const sharedFeatures = [
   },
 ];
 
-const useCaseData = {
+const useCaseData:Record<string, { title: string; description: string; image: string }>  = {
   "Golf Course": {
     title: "Why Rivio is Perfect For Golf Course Owners",
     description:
