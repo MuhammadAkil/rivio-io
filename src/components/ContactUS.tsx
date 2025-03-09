@@ -4,17 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneAlt, faGlobe, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import Image from 'next/image';
 
+
 export default function ContactUs() {
   return (
-    <div className="bg-black p-6 sm:p-8">
-               <Image
-                src="/image/Ellipse 1441.png"
-                alt="feature"
-                width={1000}
-                height={1200}
-                className="absolute left-0  z-10"
-            />
-      <div className="my-7">
+    <div className="bg-black p-6 sm:p-8 !pb-32">
+        <div className="my-7">
         <h2 className="text-5xl sm:text-1xl text-white font-bold leading-[70.44px] tracking-normal text-center">
           Get Your Pipeline Rich With <span className="block text-[#00D11F]">Qualified Deals</span>
         </h2>
@@ -63,7 +57,7 @@ export default function ContactUs() {
         </div>
 
         {/* Right Section - Contact Form */}
-        <div className="w-full sm:w-1/2 bg-[#0e2311] p-6 sm:p-10 border-l border-[#00D11F]">
+        <div className="z-30 w-full sm:w-1/2 bg-[#0e2311] p-6 sm:p-10 border-l border-[#00D11F]">
           <h2 className="text-3xl sm:text-4xl font-bold text-white">
             Send Us a <span className="text-[#00D11F]">Message</span>
           </h2>
@@ -101,6 +95,13 @@ export default function ContactUs() {
             </button>
           </form>
         </div>
+         <Image
+                        src="/image/Ellipse 1442.png"
+                        alt="Dashboard"
+                        width={800}
+                        height={500}
+                        className="absolute right-0 z-20  "
+                    />
       </div>
     </div>
   );

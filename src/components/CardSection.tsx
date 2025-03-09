@@ -5,13 +5,7 @@ import { ArrowRightIcon } from "@heroicons/react/24/solid";
 export default function CardSection() {
   return (
     <div className="bg-black text-white px-4 py-15 flex flex-col items-center relative">
-                 <Image
-  src="/image/Ellipse 1442.png"
-  alt="Dashboard"
-  width={800}
-  height={900}
-  className="absolute top-0 right-0  z-10"
-/>
+             
 
       {/* Section Title */}
       <div className="text-center mt-8">
@@ -21,7 +15,7 @@ export default function CardSection() {
       </div>
 
       {/* Card Section */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-10 md:mt-12">
+      <div className="z-20 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-10 md:mt-12">
         {[
           { src: "plumbing.png", title: "Septic & Water Monitoring" },
           { src: "local_shipping.png", title: "Delivery Companies" },
@@ -57,6 +51,13 @@ export default function CardSection() {
           <ArrowRightIcon className="h-4 w-4" />
         </button>
       </div>
+      <Image
+  src="/image/Ellipse 1442.png"
+  alt="Dashboard"
+  width={1100}
+  height={1200}
+  className="absolute top-0 right-0  z-0"
+/>
     </div>
   );
 }

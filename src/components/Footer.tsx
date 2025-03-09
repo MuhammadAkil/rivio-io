@@ -12,7 +12,6 @@ export default function Footer() {
                     <svg className="absolute top-0 left-0 w-full" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill="bg-[#effbeb]" d="M0,224L1440,96L1440,320L0,320Z" />
                     </svg>
-
                     <div className="max-w-6xl mx-auto px-6">
                         <div className="flex justify-center items-center mb-5">
                         <Image
