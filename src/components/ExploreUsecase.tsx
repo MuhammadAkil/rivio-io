@@ -1,11 +1,24 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { Tooltip } from "react-tooltip";
 
 const sharedFeatures = [
-  { src: "/image/monitor_heart (1).png", label: "Real-Time Monitoring" },
-  { src: "/image/signal_wifi_off.png", label: "No Wifi Needed" },
-  { src: "/image/objects.png", label: "Smart Alerts & Notifications" },
+  { 
+    src: "/image/monitor_heart (1).png", 
+    label: "Seamless Integration", 
+    tooltip: "Rivio connects directly with your service providers through automated notifications, making service management effortless." 
+  },
+  { 
+    src: "/image/signal_wifi_off.png", 
+    label: "No Wifi Needed", 
+    tooltip: "Rivio sensors use cellular connectivity, so they work even if your home Wi-Fi goes offline." 
+  },
+  { 
+    src: "/image/objects.png", 
+    label: "Smart Alerts & Notifications", 
+    tooltip: "Get instant alerts when something needs attention, preventing costly repairs and ensuring proactive maintenance." 
+  },
 ];
 
 const useCaseData = {
@@ -131,11 +144,33 @@ export default function Explore() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-10">
             {sharedFeatures.map((feature, index) => (
-              <FeatureItem
-                key={index}
-                src={feature.src}
-                label={feature.label}
-              />
+              <React.Fragment key={index}>
+                <div
+                  data-tooltip-id={`feature-tooltip-${index}`}
+                  data-tooltip-content={feature.tooltip}
+                  className="flex flex-col items-center w-24 relative"
+                >
+                  <Image src={feature.src} alt={feature.label} width={32} height={32} className="w-8 h-8" />
+                  <span className="mt-2 text-sm text-white text-center">{feature.label}</span>
+                </div>
+                <Tooltip
+                  id={`feature-tooltip-${index}`}
+                  place="bottom"
+                  offset={10}
+                  style={{
+                    backgroundColor: "#000",
+                    color: "#fff",
+                    padding: "6px 10px",
+                    borderRadius: "4px",
+                    zIndex: 50,
+                    maxWidth: "200px", // Set a maximum width to force wrapping
+                    whiteSpace: "normal", // Allow text to wrap
+                    lineHeight: "1.4", // Improve readability
+                    textAlign: "center", // Center the text
+                  }}
+                  className="tooltip-bottom"
+                />
+              </React.Fragment>
             ))}
           </div>
         </div>
@@ -153,7 +188,7 @@ export default function Explore() {
           </button>
         </div>
       </div>
-        <Image
+      <Image
         src="/image/Ellipse 1441.png"
         alt="feature"
         width={1000}
@@ -196,16 +231,6 @@ const GridItem: React.FC<GridItemProps> = ({
       }`}
     />
     <h3 className="text-sm sm:text-sm font-semibold text-white">{label}</h3>
-  </div>
-);
-
-const FeatureItem: React.FC<{ src: string; label: string }> = ({
-  src,
-  label,
-}) => (
-  <div className="flex flex-col items-center w-24">
-    <Image src={src} alt={label} width={32} height={32} className="w-8 h-8" />
-    <span className="mt-2 text-sm text-white text-center">{label}</span>
   </div>
 );
 
