@@ -6,12 +6,12 @@ import { FaCheck } from "react-icons/fa";
 
 export default function Benefits() {
   const features = [
-    { img: "/image/monitor_heart (1).png", text: "Real-Time Monitoring" },
-    { img: "/image/objects.png", text: "Instant Alerts" },
-    { img: "/image/signal_wifi_off.png", text: "No Wifi Needed" },
-    { img: "/image/Exclude.png", text: "Long Battery Life" },
-    { img: "/image/dash.png", text: "Dashboard Integration" },
-    { img: "/image/water_drop.png", text: "Works with Any Liquid/Solid" },
+    { img: "/image/monitor_heart (1).png", text: "Real-Time Monitoring", width: 26, height: 36  },
+    { img: "/image/objects.png", text: "Instant Alerts", width: 26, height: 36   },
+    { img: "/image/signal_wifi_off.png", text: "No Wifi Needed", width: 26, height: 36   },
+    { img: "/image/Exclude.png", text: "Long Battery Life", width: 20, height: 20   },
+    { img: "/image/dash.png", text: "Dashboard Integration", width: 26, height: 36   },
+    { img: "/image/water_drop.png", text: "Works with Any Liquid/Solid", width: 26, height: 36 },
   ];
 
   return (
@@ -59,7 +59,15 @@ export default function Benefits() {
             </button>
           </div>
 
-          <div className="hidden lg:flex bg-[#152e19] border border-[#284D2D] bg-opacity-10 p-6 rounded-xl"></div>
+          <div className="hidden lg:flex">
+            <Image
+              src="/image/ultrasonic.jpg"
+              alt="monitoring"
+              width={600}
+              height={600}
+              className="rounded-lg border-2 border-[#01C41D]"
+            />
+          </div>
         </div>
 
         <div className="mt-24 px-4 mb-24">
@@ -75,10 +83,10 @@ export default function Benefits() {
               >
                 <Image
                   src={feature.img}
-                  width={50}
-                  height={50}
+                   width={feature.width} 
+          height={feature.height} 
                   alt={feature.text}
-                  className="w-12 h-12 mb-3"
+                  className=" mb-3"
                 />
                 <p className="text-sm font-medium">{feature.text}</p>
               </div>
@@ -118,7 +126,15 @@ export default function Benefits() {
             </button>
           </div>
 
-          <div className="hidden lg:flex bg-[#152e19] border border-[#284D2D] bg-opacity-10 p-6 rounded-xl"></div>
+          <div className="hidden lg:flex">
+            <Image
+              src="/image/install.jpg"
+              alt="monitoring"
+              width={600}
+              height={600}
+              className="rounded-lg border-2 border-[#01C41D]"
+            />
+          </div>
         </div>
       </div>
     </div>
