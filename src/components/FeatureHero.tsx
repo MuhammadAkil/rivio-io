@@ -39,7 +39,7 @@ export default function FeatureHero() {
   alt="Dashboard"
   width={500}
   height={500}
-  className="w-full max-w-[900px] h-auto" 
+  className="w-full max-w-[900px] z-60 h-auto" 
 />
 
 
