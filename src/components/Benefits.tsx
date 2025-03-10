@@ -95,47 +95,47 @@ export default function Benefits() {
               </div>
               
               <div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-[#0a1b0c] bg-opacity-10 p-6 sm:p-10 rounded-2xl border-2 border-[#01C41D] bg-cover bg-center"
-          style={{ backgroundImage: "url('/image/boxes.png')" }}
-        >
-          <div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-              Installation <br />
-              <span className="text-[#00D11F]">& Maintenance</span>
-            </h1>
+  className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-[#0a1b0c] bg-opacity-10 p-6 sm:p-10 rounded-2xl border-2 border-[#01C41D] bg-cover bg-center"
+  style={{ backgroundImage: "url('/image/boxes.png')" }}
+>
+  <div className="hidden lg:flex">
+    <Image
+      src="/image/radar.webp"
+      alt="monitoring"
+      width={600}
+      height={600}
+      className="rounded-lg border-2 border-[#01C41D]"
+    />
+  </div>
 
-            <p className="text-[#FFFFFF] font-normal text-base sm:text-lg leading-relaxed mt-4">
-              Once installed, the sensor continuously monitors levels with high precision.
-            </p>
+  <div>
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+      Radar<span className="text-[#00D11F] ml-2">Level Sensors</span>
+    </h1>
 
-            <ul className="mt-4 space-y-3">
-              {[
-                "Follow the installation guide for a hassle-free setup.",
-                "Keep sensors dust-free for optimal performance.",
-                "Replace batteries periodically for uninterrupted tracking.",
-              ].map((item, index) => (
-                <li key={index} className="flex items-center space-x-2">
-                  <FaCheck className="text-[#00D11F]" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+    <p className="text-[#FFFFFF] font-normal text-base sm:text-lg leading-relaxed mt-4">
+    Uses electromagnetic waves to detect distance, offering precise measurements unaffected by temperature or vapor.
+    </p>
 
-            <button className="mt-6 bg-gradient-to-r from-[#006A10] to-[#00D11F] text-white px-6 py-3 rounded-md flex items-center gap-2">
-              Get Level Sensor <ArrowRightIcon className="h-5 w-5" />
-            </button>
-          </div>
+    <ul className="mt-4 space-y-3">
+      {[
+        "Accurate distance measurement",
+        "Performs well in harsh environments",
+        "Low maintenance and long lifespan",
+      ].map((item, index) => (
+        <li key={index} className="flex items-center space-x-2">
+          <FaCheck className="text-[#00D11F]" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
 
-          <div className="hidden lg:flex">
-            <Image
-              src="/image/install.jpg"
-              alt="monitoring"
-              width={600}
-              height={600}
-              className="rounded-lg border-2 border-[#01C41D]"
-            />
-          </div>
-        </div>
+    <button className="mt-6 bg-gradient-to-r from-[#006A10] to-[#00D11F] text-white px-6 py-3 rounded-md flex items-center gap-2">
+      Get Level Sensor <ArrowRightIcon className="h-5 w-5" />
+    </button>
+  </div>
+</div>
+
       </div>
     </div>
   );
