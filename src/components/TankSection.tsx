@@ -103,43 +103,37 @@ export default function TankSection() {
           </div>
         </div>
 
-        <div className="mt-16 p-8">
+     <div className="mt-16 p-8">
+  <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-8">
+    Trusted by <span className="text-[#00D11F]">Industry Leaders</span>
+  </h1>
+  <p className="text-white text-lg mt-2 text-center max-w-lg lg:max-w-xl mx-auto">
+    Leading businesses and municipalities rely on Rivio for seamless IoT-powered monitoring, ensuring efficiency and reliability.
+  </p>
 
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-8">
-            Trusted by <span className="text-[#00D11F] ">Industry Leaders</span>
-          </h1>
-          <p className="text-white mt-2 text-center max-w-lg mx-auto">
-            Leading businesses and municipalities rely on Rivio for seamless
-            IoT-powered monitoring, ensuring efficiency and reliability.
-          </p>
+  {/* Scrollable Container for Small Screens */}
+  <div className="mt-8 w-full overflow-x-auto flex space-x-6 md:space-x-12 justify-center">
+    {images.map((imgSrc, index) => (
+      <div
+        key={index}
+        className="bg-[#0e2311] bg-opacity-20 p-4 rounded-xl border-2 border-[#01C41D] w-24 h-24 md:w-32 md:h-32 flex items-center justify-center"
+      >
+        <Image src={imgSrc} width={60} height={60} alt={`Company ${index + 1}`} />
+      </div>
+    ))}
+  </div>
 
-          <div className="mt-8 overflow-x-auto flex space-x-12 justify-center">
-            {images.map((imgSrc, index) => (
-              <div
-                key={index}
-                className="bg-[#0e2311] bg-opacity-20 p-4 rounded-xl border-2 border-[#01C41D] w-32 h-32 flex items-center justify-center"
-              >
-                <Image
-                  src={imgSrc}
-                  width={60}
-                  height={60}
-                  alt={`Company ${index + 1}`}
-                />
-              </div>
-            ))}
-          </div>
+  <div className="text-center">
+    <p className="text-white text-lg mt-5 text-center max-w-lg lg:max-w-xl mx-auto">
+      Join them today and take control of your asset tracking with smarter automation.
+    </p>
 
-          <div className="text-center">
-            <p className="text-white mt-5 text-center max-w-lg mx-auto">
-             Join them today and take control of your asset tracking with smarter automation.
-            </p>
+    <button className="mt-6 w-full sm:w-auto px-6 py-2 hover:bg-green-400 transition bg-gradient-to-r from-[#006A10] to-[#00D11F] text-white rounded-[12px]">
+      Sign Up Now
+    </button>
+  </div>
+</div>
 
-
-            <button className="mt-6 px-6 py-2 hover:bg-green-400 transition bg-gradient-to-r from-[#006A10] to-[#00D11F] text-white px-4 py-2 rounded-[12px]">
-              SignUp Now
-            </button>
-          </div>
-        </div>
 
       </div>
     </div>

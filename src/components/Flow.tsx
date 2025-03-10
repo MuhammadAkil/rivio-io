@@ -76,7 +76,6 @@ export default function Flow() {
           From setup to insights, Rivio makes IoT monitoring effortless. Follow these easy steps to install, track, and optimize your devices—whether you're managing one or thousands.
         </p>
       </div>
-      
             <div className="bg-black min-h-screen flex items-center justify-center p-4 md:p-8">
       <div className="max-w-4xl w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
@@ -109,8 +108,6 @@ export default function Flow() {
         </div>
       </div>
     </div>
-    
-          
            <div className="text-center max-w-6xl mb-10 mt-30">
         <h2 className="text-white text-center text-4xl font-bold whitespace-nowrap">
           Ready to see what <span className="text-[#00D11F]">Rivio can do?</span>
