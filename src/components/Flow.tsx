@@ -108,16 +108,19 @@ export default function Flow() {
         </div>
       </div>
     </div>
-           <div className="text-center max-w-6xl mb-10 mt-30">
-        <h2 className="text-white text-center text-4xl font-bold whitespace-nowrap">
-          Ready to see what <span className="text-[#00D11F]">Rivio can do?</span>
-        </h2>
-        <p className="mt-6 text-lg text-gray-300">
-                  Whether you need an off-the-shelf solution or custom integration, we’re here to help.</p>
-               <button className="mt-6 px-12 py-2 hover:bg-green-400 transition bg-gradient-to-r from-[#006A10] to-[#00D11F] text-white rounded-[12px]">
-      Get Started
-    </button>
-      </div>
+           <div className="text-center max-w-6xl mx-auto mb-10 mt-10 px-4 sm:px-6 lg:px-8">
+  <h2 className="text-white text-center text-2xl sm:text-3xl md:text-4xl font-bold whitespace-nowrap">
+    Ready to see what <span className="text-[#00D11F]">Rivio can do?</span>
+  </h2>
+  <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
+    Whether you need an off-the-shelf solution or custom integration, we’re here to help.
+  </p>
+  <button
+    className="mt-4 sm:mt-6 px-6 sm:px-8 md:px-12 py-2 hover:bg-green-400 transition bg-gradient-to-r from-[#006A10] to-[#00D11F] text-white rounded-[12px] text-sm sm:text-base"
+  >
+    Get Started
+  </button>
+</div>
     </div>
   );
 }

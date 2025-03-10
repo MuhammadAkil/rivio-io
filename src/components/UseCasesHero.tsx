@@ -15,7 +15,7 @@ export default function UseCaseHero() {
         {/* Left Content */}
         <div className="flex flex-col items-center md:items-start md:max-w-md">
           <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:max-w-3xl">
-            <span className="font-bold text-white block sm:inline">
+            <span className="font-bold text-white block sm:inline mr-2">
               Stay Ahead With
             </span>
             <span className="text-[#00D11F] font-bold block sm:inline">
