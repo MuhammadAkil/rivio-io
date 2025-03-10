@@ -2,7 +2,7 @@
 import React from "react";
 import "font-awesome/css/font-awesome.min.css"; 
 import Image from "next/image";
-
+import CountUp from 'react-countup';
 export default function FeatureSection() {
   return (
     <>
@@ -15,31 +15,31 @@ export default function FeatureSection() {
     className="absolute left-0  z-10"
 />
 
-        <div className="max-w-7xl mx-auto bg-[#0A1B0D] bg-opacity-80 border border-[#284D2D] rounded-lg p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row justify-center items-center text-center gap-3 sm:gap-4 md:gap-6">
-          <div className="flex-1 flex flex-col items-center p-3 sm:p-4 bg-[#0A1B0D] bg-opacity-80 rounded-lg shadow-md">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00D11F] mb-1 sm:mb-2">
-              5,000+
-            </h2>
-            <p className="text-xs sm:text-sm md:text-lg text-white">Septic Tanks Monitored</p>
-          </div>
+       <div className="max-w-7xl mx-auto bg-[#0A1B0D] bg-opacity-80 border border-[#284D2D] rounded-lg p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row justify-center items-center text-center gap-3 sm:gap-4 md:gap-6">
+            <div className="flex-1 flex flex-col items-center p-3 sm:p-4 bg-[#0A1B0D] bg-opacity-80 rounded-lg shadow-md">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00D11F] mb-1 sm:mb-2">
+                    <CountUp end={5000} duration={5} separator="," suffix="+" />
+                </h2>
+                <p className="text-xs sm:text-sm md:text-lg text-white">Septic Tanks Monitored</p>
+            </div>
 
-          <div className="hidden sm:block w-px bg-[#00D11F] h-12 sm:h-16 md:h-24 mx-2 sm:mx-4"></div>
+            <div className="hidden sm:block w-px bg-[#00D11F] h-12 sm:h-16 md:h-24 mx-2 sm:mx-4"></div>
 
-          <div className="flex-1 flex flex-col items-center p-3 sm:p-4 bg-[#0A1B0D] bg-opacity-80 rounded-lg shadow-md">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00D11F] mb-1 sm:mb-2">
-              8,000+
-            </h2>
-            <p className="text-xs sm:text-sm md:text-lg text-white">Trash Bins Managed</p>
-          </div>
+            <div className="flex-1 flex flex-col items-center p-3 sm:p-4 bg-[#0A1B0D] bg-opacity-80 rounded-lg shadow-md">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00D11F] mb-1 sm:mb-2">
+                    <CountUp end={8000} duration={5} separator="," suffix="+" />
+                </h2>
+                <p className="text-xs sm:text-sm md:text-lg text-white">Trash Bins Managed</p>
+            </div>
 
-          <div className="hidden sm:block w-px bg-[#00D11F] h-12 sm:h-16 md:h-24 mx-2 sm:mx-4"></div>
+            <div className="hidden sm:block w-px bg-[#00D11F] h-12 sm:h-16 md:h-24 mx-2 sm:mx-4"></div>
 
-          <div className="flex-1 flex flex-col items-center p-3 sm:p-4 bg-[#0A1B0D] bg-opacity-80 rounded-lg shadow-md">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00D11F] mb-1 sm:mb-2">
-              100%
-            </h2>
-            <p className="text-xs sm:text-sm md:text-lg text-white">Customer Satisfaction</p>
-          </div>
+            <div className="flex-1 flex flex-col items-center p-3 sm:p-4 bg-[#0A1B0D] bg-opacity-80 rounded-lg shadow-md">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00D11F] mb-1 sm:mb-2">
+                    <CountUp end={100} duration={5} suffix="%" />
+                </h2>
+                <p className="text-xs sm:text-sm md:text-lg text-white">Customer Satisfaction</p>
+            </div>
         </div>
         <div className="text-center mt-10 sm:mt-12 md:mt-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.2] tracking-normal text-center text-white">
